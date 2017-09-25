@@ -8,6 +8,10 @@
 	<name>web-wink-app Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+    		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
