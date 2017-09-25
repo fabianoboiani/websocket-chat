@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Web WinkApp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+
+	<link rel="shortcut icon" href="images/winkapp.ico">
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700'
+		rel='stylesheet' type='text/css'>
+	<link href="style.css" type="text/css" rel='stylesheet' />
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<!-- script type="text/javascript" src="http://l2.io/ip.js?var=ipAddress"></script-->
+</head>
+<body>
+	<span class='show-notifications'>
+		<input type="radio" name="notification" id="showNotifications"  value="show notifications">show notifications
+		<input type="radio" name="notification" id="showMessages" value="show messages" checked>follow conversation
+		<input type="radio" name="notification" id="silence"  value="show notifications">silence
+	</span>
+
+	<!-- Button trigger modal -->
+	<span class="show-online-users">
+		<button id="show-online-users" type="button" class="btn glyphicon glyphicon-list" data-toggle="modal" data-target="#myModal">
+		</button>
+	</span>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Online</h4>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="body_container">
+
+		<div id="header">
+			<h1>WinkApp</h1>
+			<p class='online_count'>
+				<b>23</b> people online right now
+			</p>
+		</div>
+
+		<div id="prompt_name_container" class="box_shadow">
+			<p>Enter your name</p>
+			<form id="form_submit" method="post">
+				<input type="text" id="input_name" />
+				<input type="submit" value="JOIN" id="btn_join" class="btn btn-success">
+			</form>
+		</div>
+
+		<div id="message_container" class="panel">
+
+			<ul id="messages">
+			</ul>
+
+			<div id="input_message_container">
+				<form id="form_send_message" method="post" action="#">
+
+					<input type="text" class="form-control" 
+						id="input_message"
+						placeholder="Type your message here..." />
+
+					<input type="submit" class="btn btn-success"
+						id="btn_send" 
+						onclick="send();" 
+						value="Go!" />
+
+					<input type="button" class="btn btn-default"
+						id="btn_clear" 
+						onclick="$('#messages').empty();" 
+						value="Clear" />
+
+					<div class="clear"></div>
+				</form>
+			</div>
+			<!-- div>
+
+				<input type="button" class="btn btn-danger" 
+					onclick="closeSocket();"
+					value="Leave Chat Room" id="btn_close" />
+			</div-->
+
+		</div>
+
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>
